@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban - Frontend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="kanban-container">
+    <div class="kanban-column" id="todo-column">
+        <h2>A Fazer</h2>
+        <div id="todo-tasks"></div>
+        <button class="add-task-btn" onclick="openModal()">+</button>
+    </div>
+
+    <div class="kanban-column" id="in-progress-column">
+        <h2>Em Progresso</h2>
+        <div id="in-progress-tasks"></div>
+    </div>
+
+    <div class="kanban-column" id="done-column">
+        <h2>Feito</h2>
+        <div id="done-tasks"></div>
+    </div>
+</div>
+
+<!-- Modal para adicionar uma nova tarefa -->
+<div id="task-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Criar nova Tarefa</h2>
+        <form id="task-form">
+            <label for="title">Título</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Descrição</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="priority">Prioridade</label>
+            <select id="priority" name="priority">
+                <option value="BAIXA">Baixa</option>
+                <option value="MEDIA">Média</option>
+                <option value="ALTA">Alta</option>
+            </select>
+
+            <label for="dueDate">Data Limite</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+
+            <button type="submit">Salvar Tarefa</button>
+        </form>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
